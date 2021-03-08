@@ -1,0 +1,30 @@
+<h1>Productos</h1>
+<button name="newProductButton" type="button" class="btn btn-primary btn-new" (click)="newProductButton_Click()">
+    <i class="bi bi-plus-circle"></i> Nuevo Producto
+</button>
+<p *ngIf="!products"><em>Loading...</em></p>
+<table class='table table-striped' *ngIf="products">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Precio</th>
+        <th>Compa&ntilde;ia</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td scope="row">{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.minimumAge }}</td>
+        <td>{{ product.price | number: '1.2'}}</td>
+        <td>{{ product.company }}</td>
+        <td class="field-centered">
+            <button type="button" class="btn btn-warning btn-edit" name="updateProductButton" (click)="updateProductButton_Click(product.id)"><i class="bi bi-pencil-square"></i></button>
+            <button type="button" class="btn btn-danger btn-edit" name="deleteProductButton" (click)="deleteProductButton_Click(product.id)"><i class="bi bi-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

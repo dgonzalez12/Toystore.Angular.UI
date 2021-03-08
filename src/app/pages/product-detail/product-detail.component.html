@@ -1,0 +1,29 @@
+<h1>Informaci&oacute;n del Producto</h1>
+<form #productForm="ngForm" (ngSubmit)="saveProductButton_Click()">
+    <div class="input-group has-validation">
+        <span class="input-group-text" id="idLabel">No.</span>
+        <input type="text" class="form-control" id="inId" name="id" [(ngModel)]="product.id" aria-describedby="idLabel" disabled>
+    </div>
+    <div class="input-group has-validation">
+        <span class="input-group-text" id="nameLabel">Nombre</span>
+        <input type="text" class="form-control" id="inName" name="name" [(ngModel)]="product.name" aria-describedby="nameLabel" required maxLength="50">
+    </div>
+    <div class="mb-3">
+        <label class="for-label" id="descriptionLabel">Descripci&oacute;n</label>
+        <textarea class="form-control" id="inDescription" rows="3" name="description" [(ngModel)]="product.description" maxLength="100"></textarea>
+    </div>
+    <div class="input-group has-validation">
+        <span class="input-group-text" id="minimumAgeLabel">Edad</span>
+        <input type="number" class="form-control" id="inMinimumAge" name="minimumAge" [(ngModel)]="product.minimumAge" aria-describedby="minimumAgeLabel" min="0" max="100">
+    </div>
+    <div class="input-group has-validation">
+        <span class="input-group-text" id="companyLabel">Compa&ntilde;ia</span>
+        <input type="text" class="form-control" id="inCompany" name="company" [(ngModel)]="product.company" aria-describedby="companyLabel" required maxLength="50">
+    </div>
+    <div class="input-group has-validation">
+        <span class="input-group-text" id="priceLabel">Precio</span>
+        <input type="number" class="form-control" id="inPrice" name="price" [(ngModel)]="product.price" aria-describedby="priceLabel" required min="1" max="1000">
+    </div>
+    <button type="button" class="btn btn-danger" id="backToListButton" (click)="backToList()">Volver</button>
+    <button type="submit" class="btn btn-success" id="saveProductButton">Guardar</button>
+</form>

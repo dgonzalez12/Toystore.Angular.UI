@@ -1,0 +1,24 @@
+form {
+    margin-top: 15px;
+    max-width: 40%;
+    .input-group {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        span {
+            min-width: 120px;
+        }
+        input {
+            text-align: left;
+        }
+    }
+    #backToListButton {
+        margin-top: 10px;
+        float: left;
+        min-width: 80px;
+    }
+    #saveProductButton {
+        margin-top: 10px;
+        float: right;
+        min-width: 80px;
+    }
+}
